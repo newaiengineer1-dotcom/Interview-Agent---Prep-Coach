@@ -1,0 +1,9 @@
+APP_NAME = "Interview Agent - Prep Coach"
+APP_TAGLINE = "AI Interview, Smarter You"
+DEFAULT_LLM = "openai/gpt-oss-120b"
+FALLBACK_LLM = "openai/gpt-oss-20b"
+STT_MODEL = "whisper-large-v3-turbo"
+CREWAI_ENABLED = True
+MAX_RAG_CHUNKS = 6
+MAX_WEB_RESULTS = 5
+THEME = {"bg":"#080d18","panel":"#10182a","cyan":"#43d7ff","blue":"#6c7cff","green":"#4de1a8","amber":"#ffc857"}
