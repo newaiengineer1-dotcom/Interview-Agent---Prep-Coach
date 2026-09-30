@@ -4,6 +4,8 @@ from groq_service import get_client, transcribe
 from loader import extract_text, build_index
 from five_agents import evidence_agent, research_agent, strategy_agent, interviewer_agent, coach_agent
 
+st.set_page_config(page_title=APP_NAME, page_icon="⚡", layout="wide")
+
 # --- PREMIUM DARK NAVY UI CSS ---
 st.markdown("""
 <style>
@@ -146,6 +148,7 @@ if st.button("Evaluate Answer", type="primary", use_container_width=True):
             result = coach_agent(get_client(), st.session_state.question, answer, evidence, role)
         st.session_state.history.append({"question": st.session_state.question, "answer": answer, "feedback": json.dumps(result)})
         st.session_state.last = result
+        # REMOVED: save_session() -> This was causing the SQLite error
         st.session_state.pop("voice_answer", None)
 
 # --- FEEDBACK DISPLAY ---
