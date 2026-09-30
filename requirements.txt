@@ -1,3 +1,4 @@
+setuptools<81
 streamlit==1.45.0
 groq==1.0.0
 crewai==0.86.0
