@@ -1,7 +1,6 @@
 import html, json, datetime, streamlit as st
 from config import APP_NAME, APP_TAGLINE
 from services.groq_service import get_client, transcribe
-from rag.loader import extract_text, build_index
 from agents.five_agents import evidence_agent, research_agent, strategy_agent, interviewer_agent, coach_agent
 from database.db import init_db, save_session
 
