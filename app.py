@@ -1,11 +1,9 @@
 import html, json, datetime, streamlit as st
 from config import APP_NAME, APP_TAGLINE
-from services.groq_service import get_client, transcribe
-from agents.five_agents import evidence_agent, research_agent, strategy_agent, interviewer_agent, coach_agent
-from database.db import init_db, save_session
-
-st.set_page_config(page_title=APP_NAME, page_icon="⚡", layout="wide")
-init_db()
+from groq_service import get_client, transcribe
+from loader import extract_text, build_index
+from five_agents import evidence_agent, research_agent, strategy_agent, interviewer_agent, coach_agent
+from db import init_db, save_session
 
 # --- PREMIUM DARK NAVY UI CSS ---
 st.markdown("""
